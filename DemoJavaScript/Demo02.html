@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo 02</title>
+    <script type="text/javascript">
+        function myAlert(msg){
+            var t = alert(msg);
+            console.log(t);
+        }
+
+        function myConfirm(){
+            var t = confirm("Do you love me?");
+            console.log(t);
+            if(t == true)
+                window.open('http://www.google.com');
+        }
+
+        function myPrompt(){
+            var tenBan = prompt("Nhập tên của bạn", "Mr Bưởi");
+            var tenAy = prompt("Nhap tên của người ấy");
+            console.log(tenBan + " và " + tenAy + " không có hợp");
+        }
+
+        function changeColor(color){
+            document.bgColor = color;
+        }
+    </script>
+</head>
+<body onload="changeColor('#3366cc')">
+    <button type="button" onclick="myAlert('Mr Buoi')">Alert</button>
+    <button type="button" onclick="myConfirm()">Confirm</button>
+    <button type="button" onclick="myPrompt()">Prompt</button>
+
+    <button type="button" onclick="changeColor('#33cc66')">Change color</button>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo</title>
+    <script type="text/javascript">
+        var i = 0;
+        
+        function addNewElement(){
+            var pNode = document.createElement('p');
+            var textNode = document.createTextNode((i++) + '. Node');
+
+            pNode.appendChild(textNode);
+
+            var pos = document.getElementById('pos');
+            pos.appendChild(pNode);
+        }
+
+        function deleteElement(){
+            if(i == 0)
+                return;
+
+            var pos = document.getElementById('pos');
+            pos.removeChild(pos.lastChild);
+            i--;
+        }
+
+        function deleteAllElement(){
+            var pos = document.getElementById('pos');
+            pos.innerHTML = "";
+            i = 0;
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="addNewElement()">Add new</button>
+    <button type="button" onclick="deleteElement()">Delete</button>
+    <button type="button" onclick="deleteAllElement()">Delete All</button>
+
+    <div id="pos"></div>
+</body>
+</html>

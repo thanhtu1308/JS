@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo 07</title>
+    <style type="text/css">
+        span{ color: #cc3366; }
+    </style>
+    <script type="text/javascript">
+        function checkLogin(){
+            var flag = true;
+
+            var control = document.getElementById('us');
+            var error = document.getElementById("errUS");
+            if(control.value == ""){
+                error.innerHTML = "Username is not blank";
+                control.focus();
+                flag = false;
+            }
+
+            var control = document.getElementById('pw');
+            var error = document.getElementById("errPW");
+            if(control.value == ""){
+                error.innerHTML = "Password is not blank";
+                control.focus();
+                flag = false;
+            }
+
+            return flag;
+        }
+    </script>
+</head>
+<body>
+    <form name="frmLogin" action="http://www.google.com" method="get" onsubmit="return checkLogin()">
+        <div>
+            User name: <input type="text" name="us" id="us" />
+            <span id="errUS"></span>
+        </div>
+        <div>
+            Password: <input type="password" name="pw" id="pw" />
+            <span id="errPW"></span>
+        </div>
+        <button>Login</button>
+    </form>
+</body>
+</html>

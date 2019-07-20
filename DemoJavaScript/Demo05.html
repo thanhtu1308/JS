@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo 05</title>
+    <script type="text/javascript">
+        function Calc(){
+            var x = document.getElementById('x').value;
+            var y = document.getElementById('y').value;
+
+            x = parseInt(x);
+            y = parseInt(y);
+
+            var result = 0;
+
+            var oper = document.getElementById('operate').value;
+            switch (oper) {
+                case '+':
+                    result = x + y;
+                    break;
+                case '-':
+                    result = x - y;
+                    break;
+                case '*':
+                    result = x * y;
+                    break;
+                case '/':
+                    if(y == 0){
+                        rerult = "ERROR Buoi";
+                    }
+                    else {
+                        result = x / y;
+                    }
+                    break;
+            }
+
+            var idResult = document.getElementById('idResult');
+            idResult.innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        Gia tri x = <input type="text" name="val" id="x" />
+    </div>
+    <div>
+        Gia tri y = <input type="text" name="val" id="y" />
+    </div>
+    <div>
+        <select id="operate">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+    </div>
+    <div>
+        <button type="button" onclick="Calc()">Caculate</button>
+    </div>
+    <div>
+        Ket qua: <span id="idResult"></span>
+    </div>
+</body>
+</html>
